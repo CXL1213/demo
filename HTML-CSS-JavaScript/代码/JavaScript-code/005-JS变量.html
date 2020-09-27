@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS变量</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				java语言是一种强类型语言：
+					java语言在定义变量的时候必须指定变量的数据类型。
+					int i = 100;
+					在java中，变量的数据类型在编译阶段确定下来。
+					java中的变量i一旦声明为int类型，这一辈子只能是int类型。不可能编程其他类型。
+					
+				JavaScript是一种弱类型语言：
+					JavaScript不需要编译，是脚本语言，直接浏览器打开执行。
+					而且JavaScript定义变量的时候不需要指定数据类型。
+					例如：
+					
+						var i;
+						var j;
+						var l;
+					并且JS中的变量可以赋任何类型的值。
+					JS中的变量是一个万能的口袋。什么类型的数据都能放进去。
+			*/
+			
+			//JS的变量怎么定义呢？
+			//语法格式：var 变量名
+			//JS的变量如何赋值呢？
+			//变量名 = 值
+			
+			//定义一个age变量
+			// 不加;也没事
+			var age
+			// age = 12;
+			
+			//变量没有赋值的时候，默认值是undefined
+			//undefined是JS中的一个具体存在的值。
+			// 以下这行代码表示将数据输出到控制台上。（控制台怎么调出来？F12）
+			console.log(age)
+			// 给age变量赋值
+			// 从上而下依次执行，上面输出的是undefined
+			age=22;
+			console.log(age)
+			console.log("age = " + age)
+			
+			age = false
+			console.log("age = " + age)
+			age = 3.1415
+			console.log("age = " + age)
+			age = 'abcs'
+			console.log("age = " + age)
+			age = "test"
+			console.log("age = " + age)
+			
+			// 声明变量的同时赋值
+			var i = 8;
+			console.log("i = " + i);
+			
+			//一行上能不能声明多个变量呢？
+			//x和y都没有手动赋值
+			//z赋值300
+			var x, y, z = 500;
+			console.log(x)//undefined
+			console.log(y)//undefined
+			console.log(z)
+			
+			var username = "zhangsan";
+			console.log("username = " + username);
+		</script>
+	</body>
+</html>

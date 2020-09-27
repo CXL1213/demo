@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>复选框的全选和取消全选</title>
+	</head>
+	<!-- load事件在页面加载完毕之后发生。页面中所有的元素全部加载完毕了，这个事件才会发生。 -->
+	<!-- 括号一定要加，不然不会调用方法 -->
+	<body onload="bindClick()">
+		<script type="text/javascript">
+			/*
+			// 全选或者取消全选
+			function checkAll(){
+				// 获取第一个复选框对象
+				var firstchk = document.getElementById("firstchk");
+				// 获取第一个复选框的选中状态
+				// console.log(firstchk.checked)
+				if(firstchk.checked){
+					// 全选
+					// 通过name获取一组checkbox对象
+					// interests就是一个集合，或理解为数组，存储了多个checkbox对象。
+					var interests = document.getElementsByName("interest")
+					// 对数组元素进行遍历
+					for(var i = 0; i < interests.length; i++){
+						interests[i].checked = true;
+					}
+				}
+				else{
+					// 取消全选
+					var interests = document.getElementsByName("interest")
+					for(var i = 0; i < interests.length; i++){
+						interests[i].checked = false;
+						}
+				}
+			}
+			*/
+			function checkAll(){
+				
+				//获取第一个复选框的状态
+				var firstchkElt = document.getElementById("firstchk")
+				
+				// 获取所有interest复选框对象（数组）
+				var interestChks = document.getElementsByName("interest");
+				
+				// 对数组遍历
+				for(var i = 0; i < interestChks.length; i++){
+					interestChks[i].checked = firstchkElt.checked;
+				}
+			}
+			function bindClick(){
+				var interestChks = document.getElementsByName("interest")
+				for(var i = 0; i < interestChks.length; i++){
+					interestChks[i].onclick = function(){//回调函数
+						// 当总数和选中的总数量相等的时候，第一个复选框选中，其他情况下第一复选框都是取消选中的。
+						// 获取总数量
+						var count = interestChks.length;
+						// 获取选中的数量
+						var checkedCount = 0;//记录复选框被勾选的数量
+						for(var i = 0; i < interestChks.length; i++){
+							if(interestChks[i].checked){//判断复选框是否被勾选
+								checkedCount++;
+							}
+						}
+						// 判断是否相等
+						/*
+						if(count == checkedCount){//当复选框被勾选的数量与总数量相等时，即为true时，表明此时全选
+							document.getElementById("firstchk").checked = true;
+						}
+						else{
+							document.getElementById("firstchk").checked = false;
+						}
+						*/
+						、document.getElementById("firstchk").checked = (count == checkedCount)//这样更加简洁
+					}
+				}
+			}
+		</script>
+		<input type="checkbox" id="firstchk" onclick="checkAll()"/>全选<br>
+		<input type="checkbox" name="interest" value="1"/>抽烟<br>
+		<input type="checkbox" name="interest" value="2"/>喝酒<br>
+		<input type="checkbox" name="interest" value="3"/>蹦迪<br>
+		<input type="checkbox" name="interest" value="4"/>烫头<br>
+		<input type="checkbox" name="interest" value="5"/>打麻将<br>
+		<input type="checkbox" name="interest" value="6"/>王者荣耀<br>
+		<input type="checkbox" name="interest" value="7"/>打豆豆<br>
+		<input type="checkbox" name="interest" value="8"/>看书<br>
+	</body>
+</html>

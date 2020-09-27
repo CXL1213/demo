@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>注册百度注册账号</title>
+		<!-- 给字体加颜色 -->
+		<style type="text/css">
+			#text{
+				color: white;
+			}
+			#text1{
+				font-size: 1.7em;
+				position: absolute;
+				left: 195px;top: 280px;
+			}
+			#text2{
+				font-size: 1.9em;
+				position: absolute;
+				left: 195px;top: 390px;
+				letter-spacing: 6px;
+			}
+			#help{
+				color: whitesmoke;
+				font-size: 14px;
+				position: absolute;
+				left: 70px;
+				top: 648px;
+			}
+			
+			.baidu{
+				text-decoration: none;
+				color: lightgray;
+			}
+			#register{
+				width: 480px;
+				height: 580px;
+				color: whitesmoke;
+				background-color: lightgray;
+				position: absolute;
+				right: 150px;
+				top:75px;
+				opacity: 0.9;
+				/* 边角圆润 */
+				-webkit-border-radius:10px;-moz-border-radius:10px;border-radius: 15px;
+			}
+			.form_baidu{
+				position: relative;
+				left: 40px;top: 20px;
+				color: gray;
+			}
+			#login{
+				text-decoration: none;
+				white-space: nowrap;
+			}
+			#protocol{
+				text-decoration: none;
+				color: #007DFF;
+			}
+		</style>
+		<script type="text/javascript">
+			
+		</script>
+	</head>
+	<!-- 默认的图片好像被放大了,而且会重复 -->
+	<!-- 使用如下样式可以避免重复 -->
+	<body background="./reg_bg_min.jpg" 
+			style="background-repeat: no-repeat;
+			background-size: 100%;
+			background-attachment: fixed;">
+	<script type="text/javascript">
+	</script>
+	<img src="baidu.png" width="124.4px" height="40px" 
+			style="position: absolute;left: 70px; top: 60px;" >
+	<div id="text" >
+		<div id="text1">
+			<h1 >用科技</h1>
+		</div>
+			<div id="text2">
+				让复杂的世界更简单
+			</div>
+	</div>
+	<div id="help">
+		<a href="https://passport.baidu.com/v2/?ucenterfeedback#reg" class="baidu">帮助中心</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+		<a href="http://https://zhiqiu.baidu.com/imcswebchat/pc/index.html?id=48721&token=1nnbs7op4ocsr68143oamrjq9c4eoin2&domainID=pass&type=2" class="baidu">客服</a>&nbsp;&nbsp;
+		2020@Baidu
+	</div>
+	<div id="register">
+		<form action="" method="get">
+			<h1 style="color: #000000;" class="form_baidu">欢迎注册</h1>
+			<p style="color: gray;" class="form_baidu">已有账号？
+				<a href="https://passport.baidu.com/v2/?reg&tt=1596261745987&overseas=&gid=AA26AC7-4F3F-43CE-B90F-8AD09BB8A601&tpl=pp&u=https%3A%2F%2Fpassport.baidu.com%2F" id="login">登录</a>
+				</p>
+			<p style="color: black;" class="form_baidu">用户名&nbsp;&nbsp;&nbsp;
+				<!-- 事件只有放在input标签中才可以 -->
+				<input type="text" name="" id="" value="请设置用户名" onfocus="console.log('获得焦点')" title="设置后不可更改,中英文均可,最长14个英文或7个汉字"/><br>
+			</p>
+			<p style="color: black;" class="form_baidu">手机号&nbsp;&nbsp;&nbsp;<input type="text" name="" id="" value="可用于登录和找回密码" /><br></p>
+			<p style="color: black;" class="form_baidu" title="长度为8~14个字符 字母/数字以及标点符号至少包含2种 不允许有空格/中文">密&nbsp;&nbsp;&nbsp;码&nbsp;&nbsp;&nbsp;<input type="password" name="" id="" value="请设置登录密码" /><br></p>
+			<p style="color: black;" class="form_baidu">验证码&nbsp;&nbsp;&nbsp;<input type="text" name="" id="" value="请输入验证码" />
+			<input type="button" name="" id="" value="获取验证码" /><br></p>
+			<p  class="form_baidu">
+				<input type="submit" value="注册" style="background-color: #007DFF; color: white;"/><br>
+				</p>
+			<p style="color: gray;font-size: 12px;" class="form_baidu">
+				<input type="checkbox" name="" id="" value="" />
+				阅读并接受
+				<a href="https://passport.baidu.com/static/passpc-account/html/protocal.html" id="protocol">《百度用户协议》</a>及
+				<a href="http://privacy.baidu.com/mdetail?id=288" id="protocol">《百度隐私权保护声明》</a>
+			</p>
+		</form>
+	</div>
+	</body>
+</html>

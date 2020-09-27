@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>innerHTML和innerText有什么区别</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function setContent(){
+				// 获取div
+				var divElt = document.getElementById("mydiv")
+				// 设置div的内容
+				// innerHTML会将后面的字符串当做一段HTML代码解释并执行，最终展示一个效果。
+				divElt.innerHTML = "<font color='red' size='3'>用户名不能为空！</font	>"
+				// innerText，即使后面是一段HTML代码，也只是将其当做一个普通的字符串来处理。
+				// divElt.innerText = "<font color='red' size='3'>用户名不能为空！</font	>"
+			}
+		</script>
+		<div id="mydiv"></div>
+		<input type="button" value="设置div的内容" onclick="setContent()" />
+	</body>
+</html>

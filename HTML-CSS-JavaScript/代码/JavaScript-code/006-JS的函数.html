@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 能够执行。
+			// hello()
+			/*
+				1.关于java中的方法？
+				
+					int sum(int a,int b){
+						int c = a + b;
+						return c;
+					}
+				以上这是一个java中的方法。这个方法是用来求和。
+				int是返回值类型，表示这个方法执行结束之后返回一个整数。
+				sum是方法名。
+				(int a, int b)形式参数列
+				方法怎么调用呢？
+					sum("abc", "def")
+					对不起，这样在java中会报错的，因为java是强类型语言。
+					方法规定是两int类型的数据。你传递两个字符串肯定报错。
+					int retValue = sum (1, 2)
+					
+			2. 关于JavaScript中的方法？
+				- javascript是一种弱类型语言。
+				- JavaScript中不叫方法，叫函数function
+				- JS中怎么定义函数呢？
+					function 函数名(形式参数列表){
+						函数体
+					}
+				- 例如：
+					function sum(a,b){
+						
+					}
+					
+					JS的函数不需要指定返回值类型，因为可以返回任何类型的数据。
+					JS的函数形式参数列表也不需要指定数据类型，因为JS是弱类型语言。
+			
+			3.JS中的函数定义之后，必须手动调用才能执行。不调用是不会执行的。
+			*/
+		   function hello(){// 函数的声明，优先级是最高的。	
+			   alert("hello world.....")
+		   }
+		   
+		   //调用函数
+		   // hello()
+		   // 形参必须要有
+		   function sum(a, b){
+			   // console.log(a + b)
+			   console.log(a + ":" + b)
+		   }
+		   
+		   sum()
+		   sum(1)
+		   sum(1, 2)
+		   sum(1, 2, 3)
+		   
+		</script>
+		<input type="button" value="hello" onclick="hello()" />
+		
+		<button type="button" onclick="sum(1,2)">求和</button>
+		
+		<script type="text/javascript">
+			// 函数还可以有这种写法。
+			sayHello = function(username){
+				console.log("welcome, " + username)
+			}
+		</script>
+		<input type="button" value="hello, lucy" onclick="sayHello('lucy')" />
+	</body>
+</html>

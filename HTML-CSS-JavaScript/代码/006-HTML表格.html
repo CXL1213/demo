@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+		<title>HTML的表格</title>
+	</head>
+	<body>
+		<table align = "center" ; border = "1px" >
+			<tr>
+				<td>单元格</td>
+				<td>单元格</td>
+				<td rowspan = "2">单元格1</td>
+				<!--行合并口诀：-->
+			</tr>
+			<tr>
+				<td>单元格</td>
+				<td>单元格</td>
+				<!--
+				<td>单元格1</td>
+				-->
+			</tr>
+			<tr>
+				<!--如果不写这个合并，第三个会移动到第二个单元格的位置-->
+				<td colspan = "2">单元格2</td>
+				<!--
+				<td>单元格2</td>
+				-->
+				<td>单元格</td>
+			</tr>
+		</table>
+	</body>
+</html>

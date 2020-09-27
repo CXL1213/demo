@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>注册表单</title>
+	</head>
+	<body>
+		<!-- 注册表单
+			1.用户名
+			2.密码
+			3.性别
+			4.学历
+			5.兴趣
+			6.简介
+		 -->
+		<form action="http://localhost:8080/oa/register" method="get">
+			<!-- 对于文本框来说value是不需要程序员指定的。用户会自动填写。 -->
+			用户名<input type="text" name="username"/><br>
+			密码<input type="password" name="password" id="" value=""/><br>
+			性别
+				<!-- 对于单选按钮来说，value属性是必须提供的。 -->
+				<!-- 最终表单提交的数据是sex = 1或者sex = 0或者sex = 2 -->
+				<!-- 男 女 中性 这几个汉字是不会提交给服务器的，汉字只是一个参考 -->
+				<!-- 对于同一组单选按钮来说，name属性必须一致的，才可以保证单选效果。 -->
+				<!-- checked默认选中 -->
+				<input type="radio" name="sex" value="1" checked/>男
+				<input type="radio" name="sex" value="0"/>女
+				<input type="radio" name="sex" value="2"/>中性
+				<br>
+			学历
+				<select name="grade">
+					<!-- 选项 -->.
+					<!-- selected默认选中 -->
+					<option value="">--请选择学历--</option>
+					<option value ="1" selected>高中</option>
+					<option value ="2">大专</option>
+					<option value ="3">本科</option>
+					<option value ="4">硕士</option>
+				</select>
+				<br>
+			兴趣
+			<!-- 同一组复选框，name属性也需要一致。 -->
+				抽烟<input type="checkbox" name="hobby" value="smoke"/>
+				喝酒<input type="checkbox" name="hobby" value="drink"/>
+				烫头<input type="checkbox" name="hobby" value="Perm" checked/>
+				<br>
+			简介
+			<!-- 文本域 -->
+			<!-- 对于textarea来说value是不需要的。 -->
+				<textarea rows="10" cols="60" name="brief introduction">
+					
+				</textarea>
+				<br>
+				<!-- 提交按钮，必须放在form内，否则无法提交 -->
+				<!-- 提交表单 -->
+				<input type="submit" value="注册" />
+				<!-- 重置表单 -->
+				<input type="reset" name="重置"/>
+		</form>
+	</body>
+</html>
+<!-- 
+http://localhost:8080/oa/register?username=+ad&password=asdfa&sex=0&grade=3&hobby=smoke&hobby=Perm&brief+introduction=%09%09%09%09%09%0D%0A%09%09%09%E6%B2%99%E5%8F%91%E6%96%AF%E8%92%82%E8%8A%AC%E8%AF%A5%E4%B8%8D%E8%AF%A5%E5%8F%91%E5%B8%83%09 
+-->

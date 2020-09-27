@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>获取文本框的value</title>
+	</head>
+	<body>
+		<!-- 
+			在JS当中获取了一个节点对象之后，这个标签中有什么属性，这个节点对象就能“点”什么。
+			例如：
+				input标签有value属性，那么就可以：inputObj.value
+				value属性有两种访问方式：、
+					第一种：inputObj.value    （获取value）
+					第二种：inputObj.value = "数据"   （设置value）
+		 -->
+		<script type="text/javascript">
+			function getUsername(){
+				// 获取文本框对象	
+				// var usernameElt = document.getElementById("username");
+				// 获取value
+				// var username = usernameElt.value
+				// alert(username)
+
+				// usernameElt.type = "checkbox"
+				
+				// 等号代表重新赋值。
+				// usernameElt.value = "动力节点。"
+				
+				// alert(document.getElementById("username").value)
+				
+				
+				document.getElementById("username").value = "hehe"
+			}
+		</script>
+		用户名<input type="text" name="username" id="username" />
+		<input type="button" value="获取用户名" onclick="getUsername()"/>
+	</body>
+</html>

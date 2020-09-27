@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 引入外部独立的css文件  -->
+		<link rel="stylesheet" type="text/css" href="./cart.css"/>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			function modifyCount(thisNode){
+				//输入的数据只能是1~64，只要不是这个范围内的，归1
+				var userInput = thisNode.value;//用户输入的数据
+				// 当这个数据不合法的时候归1
+				// 第一个数字是1-9中的一个.第二个数字可以有也可以没有。
+				var regExp = /^[1-9][0-9]*$/
+				var ok = regExp.test(userInput)
+				if(!ok){
+					thisNode.value = 1;
+				}else{
+					if(thisNode.value > 64){
+						thisNode.value = 1;
+					}
+				}
+				// 必须写在函数（function）内才能运行
+				// 修改条目的总价
+				// 获取隐藏域当中的单价
+				var price = document.getElementById("price").value;
+				// 计算总价
+				var total = price * thisNode.value
+				// 将总价设置到div当中
+				var item_total_price = document.getElementById("item_total_price")
+				item_total_price.innerHTML = "￥" + total;
+			}
+			function del(thisNode){
+				// 删除之前要提示用户
+				// OK的值有可能是true，也可能是false
+				// 用户点击ok是true
+				// 用户点击取消是false
+				var ok = window.confirm("你确定要删除该宝贝吗?")
+				if(ok){
+					// 删除item
+					// 获取当前节点的父节点的父节点
+					thisNode.parentNode.parentNode.remove()
+				}
+			}
+			function addProduct(thisNode){
+				//将文本框中的数量+1
+				//获取所有子节点thisNode.parentNode.childNodes
+				
+				//测试有几个节点
+				// console.log(thisNode.parentNode.childNodes)
+				
+				
+				var childNodes = thisNode.parentNode.childNodes;
+				var newCount;
+				var i;
+				for(i = 0; i < childNodes.length; i++){
+					if(childNodes[i].tagName == "INPUT"){
+						// 测试有没有input节点
+						// console.log(childNodes[i].tagName)
+						
+						newCount = parseInt(childNodes[i].value) + 1;
+						break;
+					}
+				}
+				// 测试点击加号后,是否会发生变化
+				// alert(newCount)
+				//然后修改条目总价
+				childNodes[i].value = newCount;
+				modifyCount(childNodes[i])
+			}
+		</script>
+		
+		<!-- 多个店铺 -->
+		<div class="shops">
+			<!-- 第一个店铺 -->
+			<div class="shop">
+				<!-- 头部 -->
+				<div class="header">
+					<input type="checkbox" class="<shop_checkbox> </shopcheckbox>" />
+					<span class="shop_icon"> </span>
+					<span class="shop_name">店铺：铂伊旗舰店</span>
+					<span class="shop_wangwangicon"> </span>
+				</div>
+				<!-- 条目1 -->
+				<div class="item">
+					<!-- 条目的复选框 -->
+					<div class="item_checkbox">
+						<input type="checkbox"  />
+					</div>
+					<!-- 条目的图片 -->
+					<div class="item_img">
+						
+					</div>
+					<!-- 条目的广告宣传 -->
+					<div class="promotion">
+						<div class="promotion_content">
+							时尚雪纺衫女长袖2020春装新款内搭显瘦衬衫高档洋气小衫上衣打底
+						</div>
+						<div class="three_icon">
+							<span>	</span>
+							<span>	</span>
+							<span>	</span>
+						</div>
+					</div>
+					<!-- sku（商品的参数） -->
+					<div class="sku">
+						<!-- 颜色 -->
+						<div class="sku_color">
+							颜色分类：黑色
+						</div>
+						<!-- 尺寸 -->
+						<div class="sku_size">
+							尺码：XXL
+						</div>
+					</div>
+					<!-- 价格 -->
+					<div class="price">
+						<div class="">
+							<div class="price1">
+								<del>￥119.80</del>
+							</div>
+							<div class="price2">
+								￥59.90
+								<!-- 将单价隐藏起来 -->
+								<input type="hidden" id="price" value="59.90" />
+							</div>
+						</div>
+					</div>
+					<!-- 数量 -->
+					<div class="num">
+						<span class="minus">-</span>
+						<input type="text" class="num_input" value="1" onkeyup="modifyCount(this)"/>
+						<span class="plus" onclick="addProduct(this)">+</span>
+					</div>
+					<!-- 条目总价 -->
+					<div id="item_total_price" class="item_total_price">
+							￥59.90
+					</div>
+					<div class="operation">
+						<!-- 收藏 -->
+						<div class="favorites">
+							移入收藏夹
+						</div>
+						<div id="del" class="del" onclick="del(this)">
+							删除
+						</div>
+					</div>
+				</div>
+				<div class="shop">
+					<!-- 条目1 -->
+					<div class="item">
+						<!-- 条目的复选框 -->
+						<div class="item_checkbox">
+							<input type="checkbox"  />
+						</div>
+						<!-- 条目的图片 -->
+						<div class="item_img">
+							
+						</div>
+						<!-- 条目的广告宣传 -->
+						<div class="promotion">
+							<div class="promotion_content">
+								时尚雪纺衫女长袖2020春装新款内搭显瘦衬衫高档洋气小衫上衣打底
+							</div>
+							<div class="three_icon">
+								<span>	</span>
+								<span>	</span>
+								<span>	</span>
+							</div>
+						</div>
+						<!-- sku（商品的参数） -->
+						<div class="sku">
+							<!-- 颜色 -->
+							<div class="sku_color">
+								颜色分类：黑色
+							</div>
+							<!-- 尺寸 -->
+							<div class="sku_size">
+								尺码：XXL
+							</div>
+						</div>
+						<!-- 价格 -->
+						<div class="price">
+							<div class="">
+								<div class="price1">
+									<del>￥119.80</del>
+								</div>
+								<div class="price2">
+									￥59.90
+								</div>
+							</div>
+						</div>
+						<!-- 数量 -->
+						<div class="num">
+							<span class="minus">-</span>
+							<input type="text" class="num_input" value="1" />
+							<span class="plus">+</span>
+						</div>
+						<!-- 条目总价 -->
+						<div class="item_total_price">
+								￥59.90
+						</div>
+						<div class="operation">
+							<!-- 收藏 -->
+							<div class="favorites">
+								移入收藏夹
+							</div>
+							<div class="del">
+								删除
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 第二个店铺 -->
+			<div class="shop">
+				<!-- 头部 -->
+				<div class="header">
+					<input type="checkbox" class="<shop_checkbox> </shopcheckbox>" />
+					<span class="shop_icon"> </span>
+					<span class="shop_name">店铺：天意时尚大小码女</span>
+					<span class="shop_wangwangicon"> </span>
+				</div>
+				<!-- 条目1 -->
+				<div class="item">
+					<!-- 条目的复选框 -->
+					<div class="item_checkbox">
+						<input type="checkbox"  />
+					</div>
+					<!-- 条目的图片 -->
+					<div class="item_img">
+						
+					</div>
+					<!-- 条目的广告宣传 -->
+					<div class="promotion">
+						<div class="promotion_content">
+							夏季新款单靴网红短筒真皮粗跟中跟马丁短靴女鞋40大码女靴41-43
+						</div>
+						<div class="three_icon">
+							<span>	</span>
+							<span>	</span>
+							<span>	</span>
+						</div>
+					</div>
+					<!-- sku（商品的参数） -->
+					<div class="sku">
+						<!-- 颜色 -->
+						<div class="sku_color">
+							颜色分类：焦糖色[单里]
+						</div>
+						<!-- 尺寸 -->
+						<div class="sku_size">
+							尺码：41
+						</div>
+					</div>
+					<!-- 价格 -->
+					<div class="price">
+						<div class="">
+							<div class="price1">
+								<del>￥498.00</del>
+							</div>
+							<div class="price2">
+								￥238.00
+							</div>
+						</div>
+					</div>
+					<!-- 数量 -->
+					<div class="num">
+						<span class="minus">-</span>
+						<input type="text" class="num_input" value="1" />
+						<span class="plus">+</span>
+					</div>
+					<!-- 条目总价 -->
+					<div class="item_total_price">
+							￥238.00
+					</div>
+					<div class="operation">
+						<!-- 收藏 -->
+						<div class="favorites">
+							移入收藏夹
+						</div>
+						<div class="del">
+							删除
+						</div>
+						<div class="similar">
+							相似宝贝
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 结算 -->
+			<div class="checkout">
+				<!-- 全选 -->
+				<div class="checkalldiv">
+					<!-- 全选 -->
+					<div class="checkall">
+						<span id="">
+							<input type="checkbox" />&nbsp;&nbsp;全选
+						</span>
+						<!-- 删除选中的 -->
+						<span class="delchecked">
+							&nbsp;&nbsp;删除
+						</span>
+						<span class="Clear_invalid_baby">
+							&nbsp;&nbsp;清除失效宝贝
+						</span>
+						<span class="Clear_invalid_baby">
+							&nbsp;&nbsp;移入收藏夹
+						</span>
+						<span class="Clear_invalid_baby">
+							&nbsp;&nbsp;分享
+						</span>
+					</div>
+				</div>
+				<!-- 结算 -->
+				<div class="checkout2">
+					已选商品<span class="checkedcount">0</span>件
+					<span class="totaltext">合计（不含运费）：</span>
+					<span class="totaltext">0.00</span>
+					<span class="checkoutbtn">结&nbsp;&nbsp;算</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>method属性</title>
+	</head>
+	<body>
+		<!-- get请求提交的数据会显示到浏览器的地址栏上：http://localhost:8080/oa/login?username=jack&password=111 -->
+		<form action="http://localhost:8080/oa/login" method="get">
+			username:<input type="text" name="username"/><br>
+			password:<input type="password" name="password"/><br>
+			<input type="submit" value="login"/>
+		</form>
+		<!-- 简单的先了解一下，get请求最终提交的数据会显示到浏览器的地址栏上。post请求提交的数据不会显示到浏览器的地址栏上。 -->
+		<form action="http://localhost:8080/oa/login" method="post">
+			username:<input type="text" name="username"/><br>
+			password:<input type="password" name="password"/><br>
+			<input type="submit" value="login"/>
+		</form>
+	</body>
+</html>

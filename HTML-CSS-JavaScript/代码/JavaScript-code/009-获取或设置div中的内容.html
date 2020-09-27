@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>获取或设置div中的内容</title>
+		<style type="text/css">
+			#div2{
+				background-color: aqua;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 
+			innerHTML:
+				1.这是一个属性，不是一个函数。
+				2.innerHTML有两个作用，第一个作用是获取元素内部的内容。
+				第二个作用是设置元素内部的内容。
+		 -->
+		<script type="text/javascript">
+			function getContent(){
+				// 获取div中的内容
+				// 不加双引号会报错
+				var divElt = document.getElementById("div1");
+				// 获取div中的内容
+				// innerHTML是一个非常重要的属性，它可以获取也可以设置元素内部的内容。
+				console.log(divElt.innerHTML)
+				var divElt2 = document.getElementById("div2")
+				// divElt2.innerHTML = "固定的。"
+				divElt2.innerHTML = divElt.innerHTML
+				
+			}
+		</script>
+		<div id="div1">
+			hello, jack, welcome to china!
+		</div>
+		<div id="div2">
+			
+		</div>
+		<!-- 不加括号会报错。 -->
+		<!-- 按钮 -->
+		<input type="button" value="获取div中的内容" onclick="getContent()"/>
+	</body>
+</html>

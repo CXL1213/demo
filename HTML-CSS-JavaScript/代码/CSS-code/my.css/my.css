@@ -1,0 +1,23 @@
+#div1{
+	width: 100px;
+	height: 100px;
+	background: #0000FF;
+	border: 1px solid black;
+	/* 绝对定位 */
+	position: absolute;
+	/* 绝对定位的时候只要设置X轴和Y轴即可 */
+	top: 100px;
+	left: 300px;
+}
+
+#div2{
+	width: 100px;
+	height: 100px;
+	background: yellow;
+	border: 1px solid black;
+	/* 绝对定位 */
+	position: absolute;
+	/* 绝对定位的时候只要设置X轴和Y轴即可 */
+	top: 110px;
+	left: 320px;
+}

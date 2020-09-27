@@ -1,0 +1,130 @@
+/* 类选择器可以写多个，使用逗号隔开 */
+/* 空格后面是子元素 */
+.shop_icon,.shop_wangwangicon,.three_icon span{
+	width: 15px;
+	height: 15px;
+	background-color: blue;
+	/* 以块的形式展示出来，但是不会独占行 */
+	display: inline-block;
+}
+/* 设置所有店铺的样式 */
+.shops {
+	width: 1200px;
+	/* background-color: aqua; */
+	/* 设置div居中 */
+	margin-left:auto ;
+	margin-right: auto;
+	/* 字号大小 */
+	font-size: 13px;
+	/* 设置字体颜色 */
+	color: 666666;
+}
+
+/* 设置店铺名称的位置 */
+/* 让店铺名称和左右两边的图标对齐 */
+.shop_name{
+	position: relative;
+	bottom: 3px;
+}
+/* 设置店铺头上4个元素的右外补丁 */
+.shop_checkbox,.shop_icon,.shop_name,.shop_wangwangicon{
+	/* 打补丁，右边空出来了 */
+	margin-right: 10px;
+}
+/* 设置条目的样式 */
+.item{
+	/* 弹性布局 */
+	display: flex;
+	/* 设置背景色 */
+	background-color: #F7F7F7;
+	/* 设置边框颜色 */
+	border: 1px solid #DDDDDD;
+	/* 给item条目添加一个内补丁（上、下、左、右） */
+	padding: 20px;
+}
+/* 设置商品图片的样式 */
+.item_img{
+	width: 100px;
+	height: 100px;
+	background-color: aqua;
+}
+/* 设置header的向下的补丁 */
+.header{
+	margin-bottom: 10px;
+}
+/* 设置条目复选框、条目图片的右外补丁 */
+.item_checkbox,.item_img,.promotion_content,.item_total_price{
+	margin-right: 10px;
+}
+/* 设置广告宣传的样式 */
+.promotion{
+	/* 弹性布局，默认是横向布局 */
+	display: flex;
+	/* 纵向布局,将弹性布局的横向修改为纵向 */
+	flex-direction: column;
+	/* 调整内容，两端对齐 */
+	justify-content: space-between;
+	/* 调整宽度	 */
+	width: 250px;
+	/* 右外补丁 */
+	margin-right: 50px;
+}
+.sku{
+	/* 右外补丁 */
+	margin-right: 120px;
+}
+/* 单价price右边加外补丁 */
+.price{
+	margin-right: 100px;
+}
+/* 价格1灰色 */
+.price1{
+	color: #D5D5D5;
+}
+/* 价格2加粗 */
+.price2{
+	font-weight: 600;
+}
+/* input输入框：数量 */
+.num_input{
+	width: 40px;
+	height: 25px;
+	/* 文本框中的文本居中 */
+	text-align: center;
+}
+/* 右外补丁 */
+.num{
+	margin-right: 40px;
+	background-color: #D5D5D5;
+	height: 30px;
+}
+/* 右外补丁 */
+.item_total_price{
+	margin-right: 60px;
+	width: 50px;
+	font-weight: 600;
+	color: #FF7A22;
+}
+.shop{
+	margin-bottom: 30px;;
+}
+.checkout {
+	display: flex;
+	/* 两端对齐 */
+	justify-content: space-between;
+	background-color: #DDDDDD;
+	height: 60px;
+}
+.checkoutbtn{
+	width: 100px;
+	height: 58px;
+	background-color: #555555;
+	font-size: 20px;
+	color: white;
+	/* 设置行间距 */
+	line-height: 60px;
+}
+.plus:hover,.del:hover,.minus:hover{
+	color: red;
+	cursor: pointer;
+}
